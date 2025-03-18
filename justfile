@@ -4,6 +4,17 @@
 help:
     @just --list
 
+[doc("compile Keychron Q2")]
+[group("q2")]
+q2-compile: q2-setup
+    @qmk compile -kb keychron/q2/ansi_encoder -km awmckinley
+
+[doc("setup QMK for Keychron Q2")]
+q2-setup:
+    @qmk config user.overlay_dir="$(pwd)"
+    @qmk config user.qmk_home="${HOME}/Code/github.com/qmk/qmk_firmware"
+    @qmk setup --branch 0.25.22 --yes qmk/qmk_firmware
+
 [doc("compile Keychron V5M-D1")]
 [group("v5m")]
 v5m-compile: v5m-setup

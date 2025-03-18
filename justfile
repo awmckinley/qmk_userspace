@@ -9,7 +9,14 @@ help:
 q2-compile: q2-setup
     @qmk compile -kb keychron/q2/ansi_encoder -km awmckinley
 
+[doc("flash Keychron Q2")]
+[group("q2")]
+q2-flash: q2-setup
+    @printf 'Reset Key:\nHold down the key located at K00, commonly programmed as Esc while plugging in the keyboard.\n\n'
+    @qmk flash keychron_q2_ansi_encoder_awmckinley.bin
+
 [doc("setup QMK for Keychron Q2")]
+[group("q2")]
 q2-setup:
     @qmk config user.overlay_dir="$(pwd)"
     @qmk config user.qmk_home="${HOME}/Code/github.com/qmk/qmk_firmware"
@@ -27,6 +34,7 @@ v5m-flash: v5m-setup
     @qmk flash keychron_v5_max_ansi_encoder_awmckinley.bin
 
 [doc("setup QMK for Keychron V5M-D1")]
+[group("v5m")]
 v5m-setup:
     @qmk config user.overlay_dir="$(pwd)"
     @qmk config user.qmk_home="${HOME}/Code/github.com/Keychron/qmk_firmware"

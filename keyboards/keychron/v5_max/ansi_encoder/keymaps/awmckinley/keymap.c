@@ -20,13 +20,12 @@ enum custom_keycodes {
 };
 
 enum layers {
-    MAC_BASE,
+    MAC_BASE = 0,
     MAC_FN,
     WIN_BASE,
     WIN_FN,
 };
 
-// macOS supports F1 to F19
 #define MT_19RC RCMD_T(KC_F19)
 #define MT_ESCA LCA_T(KC_ESC)
 #define MT_ESOC LAG_T(KC_ESC)

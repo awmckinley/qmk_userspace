@@ -1,8 +1,11 @@
 #include QMK_KEYBOARD_H
 #include "keychron_common.h"
 
+#define COMBO_COUNT 1
+#define COMBO_TERM 50
+#define FORCE_NKRO
+
 // TODO: dynamic macros
-// TODO: combo feature
 // TODO: advanced key codes
 
 enum custom_keycodes {
@@ -65,6 +68,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,           _______, _______, _______,  _______,  BAT_LVL, NK_TOGG, _______, _______, _______, _______,                _______, _______, _______, _______, _______, _______,
         _______, _______,  _______,                              _______,                            _______, _______,    _______,    _______, _______, _______, _______, _______        ),
  };
+
+#if defined(COMBO_ENABLE)
+
+const uint16_t PROGMEM eu_combo[] = { KC_E, KC_U, COMBO_END };
+
+combo_t key_combos[] = {
+    COMBO(eu_combo, KC_F18),
+};
+
+#endif // COMBO_ENABLE
 
 #if defined(ENCODER_MAP_ENABLE)
 

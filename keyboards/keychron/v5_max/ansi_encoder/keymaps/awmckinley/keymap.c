@@ -1,6 +1,10 @@
 #include QMK_KEYBOARD_H
 #include "keychron_common.h"
 
+// TODO: dynamic macros
+// TODO: combo feature
+// TODO: advanced key codes
+
 enum custom_keycodes {
     PD_0 = SAFE_RANGE,
     PD_1,
@@ -32,7 +36,7 @@ enum layers {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [MAC_BASE] = LAYOUT_ansi_98(
-        KC_CAPS,            KC_BRID,  KC_BRIU,  KC_MCTRL, KC_LNPAD, RGB_VAD,  RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,    KC_VOLU,            KC_DEL,   KC_HOME,  KC_END,     KC_MUTE,
+        CW_TOGG,            KC_BRID,  KC_BRIU,  KC_MCTRL, KC_LNPAD, RGB_VAD,  RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,    KC_VOLU,            KC_DEL,   KC_HOME,  KC_END,     KC_MUTE,
         PD_GRV,   PD_1,     PD_2,     PD_3,     PD_4,     PD_5,     PD_6,     PD_7,     PD_8,     PD_9,     PD_0,     PD_MINS,  PD_EQL,     KC_BSPC,            KC_NUM,   KC_PSLS,  KC_PAST,    KC_PMNS,
         KC_TAB,   KC_SCLN,  KC_COMM,  KC_DOT,   KC_P,     KC_Y,     KC_F,     KC_G,     KC_C,     KC_R,     KC_L,     KC_SLSH,  PD_RBRC,    PD_BSLS,            KC_P7,    KC_P8,    KC_P9,      KC_PPLS,
         MT_ESOC,  KC_A,     KC_O,     KC_E,     KC_U,     KC_I,     KC_D,     KC_H,     KC_T,     KC_N,     KC_S,     KC_MINS,              KC_ENT,             KC_P4,    KC_P5,    KC_P6,
@@ -46,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,            _______,  _______,  _______,  _______,  BAT_LVL,  NK_TOGG,  _______,  _______,  _______,  _______,              _______,  _______,  _______,  _______,  _______,    _______,
         _______,  _______,  _______,                                _______,                                _______,  _______,  _______,    _______,  _______,  _______,  _______,  _______            ),
     [WIN_BASE] = LAYOUT_ansi_98(
-        KC_CAPS,            KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             KC_DEL,   KC_HOME,  KC_END,     KC_MUTE,
+        CW_TOGG,            KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             KC_DEL,   KC_HOME,  KC_END,     KC_MUTE,
         PD_GRV,   PD_1,     PD_2,     PD_3,     PD_4,     PD_5,     PD_6,     PD_7,     PD_8,     PD_9,     PD_0,     PD_MINS,    PD_EQL,   KC_BSPC,            KC_NUM,   KC_PSLS,  KC_PAST,    KC_PMNS,
         KC_TAB,   KC_SCLN,  KC_COMM,  KC_DOT,   KC_P,     KC_Y,     KC_F,     KC_G,     KC_C,     KC_R,     KC_L,     KC_SLSH,    PD_RBRC,  PD_BSLS,            KC_P7,    KC_P8,    KC_P9,      KC_PPLS,
         MT_ESCA,  KC_A,     KC_O,     KC_E,     KC_U,     KC_I,     KC_D,     KC_H,     KC_T,     KC_N,     KC_S,     KC_MINS,              KC_ENT,             KC_P4,    KC_P5,    KC_P6,
@@ -81,34 +85,34 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 	ko_make_basic(MOD_MASK_SHIFT, trigger_key, replacement_key)
 
 const key_override_t base_0 = ko_make_user_base(PD_0, LSFT(KC_8));
-const key_override_t shft_0 = ko_make_user_shft(PD_0, KC_0);
+const key_override_t shft_0 = ko_make_user_shft(PD_0, KC_P0);
 
 const key_override_t base_1 = ko_make_user_base(PD_1, LSFT(KC_EQL));
-const key_override_t shft_1 = ko_make_user_shft(PD_1, KC_1);
+const key_override_t shft_1 = ko_make_user_shft(PD_1, KC_P1);
 
 const key_override_t base_2 = ko_make_user_base(PD_2, KC_LBRC);
-const key_override_t shft_2 = ko_make_user_shft(PD_2, KC_2);
+const key_override_t shft_2 = ko_make_user_shft(PD_2, KC_P2);
 
 const key_override_t base_3 = ko_make_user_base(PD_3, LSFT(KC_LBRC));
-const key_override_t shft_3 = ko_make_user_shft(PD_3, KC_3);
+const key_override_t shft_3 = ko_make_user_shft(PD_3, KC_P3);
 
 const key_override_t base_4 = ko_make_user_base(PD_4, LSFT(KC_9));
-const key_override_t shft_4 = ko_make_user_shft(PD_4, KC_4);
+const key_override_t shft_4 = ko_make_user_shft(PD_4, KC_P4);
 
 const key_override_t base_5 = ko_make_user_base(PD_5, LSFT(KC_7));
-const key_override_t shft_5 = ko_make_user_shft(PD_5, KC_5);
+const key_override_t shft_5 = ko_make_user_shft(PD_5, KC_P5);
 
 const key_override_t base_6 = ko_make_user_base(PD_6, KC_EQL);
-const key_override_t shft_6 = ko_make_user_shft(PD_6, KC_6);
+const key_override_t shft_6 = ko_make_user_shft(PD_6, KC_P6);
 
 const key_override_t base_7 = ko_make_user_base(PD_7, LSFT(KC_0));
-const key_override_t shft_7 = ko_make_user_shft(PD_7, KC_7);
+const key_override_t shft_7 = ko_make_user_shft(PD_7, KC_P7);
 
 const key_override_t base_8 = ko_make_user_base(PD_8, LSFT(KC_RBRC));
-const key_override_t shft_8 = ko_make_user_shft(PD_8, KC_8);
+const key_override_t shft_8 = ko_make_user_shft(PD_8, KC_P8);
 
 const key_override_t base_9 = ko_make_user_base(PD_9, KC_RBRC);
-const key_override_t shft_9 = ko_make_user_shft(PD_9, KC_9);
+const key_override_t shft_9 = ko_make_user_shft(PD_9, KC_P9);
 
 const key_override_t base_bsls = ko_make_user_base(PD_BSLS, KC_BSLS);
 const key_override_t shft_bsls = ko_make_user_shft(PD_BSLS, LSFT(KC_3));

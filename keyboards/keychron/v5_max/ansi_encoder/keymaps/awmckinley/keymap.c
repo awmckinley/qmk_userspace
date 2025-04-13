@@ -1,10 +1,6 @@
 #include QMK_KEYBOARD_H
 #include "keychron_common.h"
 
-#define COMBO_COUNT 1
-#define COMBO_TERM 50
-#define FORCE_NKRO
-
 // TODO: dynamic macros
 // TODO: advanced key codes
 

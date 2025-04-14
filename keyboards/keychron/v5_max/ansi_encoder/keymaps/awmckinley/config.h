@@ -5,4 +5,4 @@
 #define FORCE_NKRO
 
 // default: 200
-#define TAPPING_TERM 100
+#define TAPPING_TERM 150

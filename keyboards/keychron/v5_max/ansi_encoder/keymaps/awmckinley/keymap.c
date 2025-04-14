@@ -127,8 +127,8 @@ const key_override_t shft_9 = ko_make_user_shft(PD_9, KC_P9);
 const key_override_t base_bsls = ko_make_user_base(PD_BSLS, KC_BSLS);
 const key_override_t shft_bsls = ko_make_user_shft(PD_BSLS, LSFT(KC_3));
 
-const key_override_t base_eql = ko_make_user_base(PD_EQL, LSFT(KC_BSLS));
-const key_override_t shft_eql = ko_make_user_shft(PD_EQL, KC_GRAVE);
+const key_override_t base_eql = ko_make_user_base(PD_EQL, KC_GRAVE);
+const key_override_t shft_eql = ko_make_user_shft(PD_EQL, LSFT(KC_BSLS));
 
 const key_override_t base_grv = ko_make_user_base(PD_GRV, LSFT(KC_4));
 const key_override_t shft_grv = ko_make_user_shft(PD_GRV, LSFT(KC_6));

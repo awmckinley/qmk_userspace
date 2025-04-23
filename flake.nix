@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2411.714685";
+    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2411.716947";
   };
   outputs =
     { nixpkgs, ... }:
